@@ -55,9 +55,10 @@ public class PushSenseiReceiver extends BroadcastReceiver {
 	    .setContentIntent(pi)
 	    .setAutoCancel(true)
 	    .setVibrate(vibracion)
-	    .build();
+	    .build(); 
 	    
 	    NotificationManager nm= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 	    nm.notify(0, noti);
+	    //Dsf
 	  }
 }
