@@ -23,42 +23,43 @@ import java.util.Iterator;
  */
 public class PushSenseiReceiver extends BroadcastReceiver {
 	private static final String TAG = "MyCustomReceiver";
-	 
+	private static int cont;
+
 	  @Override
 	  public void onReceive(Context context, Intent intent) {
-	    try {
-	      String action = intent.getAction();
-	      String channel = intent.getExtras().getString("com.parse.Channel");
-	      JSONObject json = new JSONObject(intent.getExtras().getString("com.parse.Data"));
-	 
-	      Log.d(TAG, "got action " + action + " on channel " + channel + " with:");
-	      Iterator itr = json.keys();
-	      while (itr.hasNext()) {
-	        String key = (String) itr.next();
-	        Log.d(TAG, "..." + key + " => " + json.getString(key));
-	      }
-	    } catch (JSONException e) {
-	      Log.d(TAG, "JSONException: " + e.getMessage());
-	    }
+	    
 	    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
-	    
-	    
-	    Intent launchActivity=  new Intent(context, MainActivity.class);
-	    PendingIntent pi= PendingIntent.getActivity(context, 0, launchActivity, 0);
-	    
-	    long[] vibracion= {0, 500,100, 500};
-	    Notification noti= new NotificationCompat.Builder(context)
-	    .setContentTitle("Estado del Puente")
-	    .setContentText("como estas")
-	    .setSmallIcon(R.drawable.ic_launcher)
-	    .setLargeIcon(icon)
-	    .setContentIntent(pi)
-	    .setAutoCancel(true)
-	    .setVibrate(vibracion)
-	    .build(); 
-	    
-	    NotificationManager nm= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-	    nm.notify(0, noti);
-	    //Dsf
+
+	    try {
+	    	JSONObject json = new JSONObject(intent.getExtras().getString("com.parse.Data"));
+	    	String estado= json.getString("est");
+	    	String descripcion= json.getString("desc");
+	    	String hora= json.getString("hora");
+	    	
+	    	Intent launchActivity=  new Intent(context, MainActivity.class);
+	    	launchActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			launchActivity.putExtra("estado", estado);
+			launchActivity.putExtra("descripcion", descripcion);
+			launchActivity.putExtra("hora", hora);
+			PendingIntent pi= PendingIntent.getActivity(context, cont++, launchActivity, 0);
+			MainActivity.actualizar(estado, descripcion, hora);
+			
+			long[] vibracion= {0, 500,100, 500};
+			Notification noti= new NotificationCompat.Builder(context)
+			.setContentTitle("Estado del Puente: "+estado)
+			.setContentText(descripcion)
+			.setSmallIcon(R.drawable.ic_launcher)
+			.setLargeIcon(icon)
+			.setContentIntent(pi)
+			.setAutoCancel(true)
+			.setVibrate(vibracion)
+			.build();
+			
+			NotificationManager nm= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+			nm.notify(0, noti);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	  }
 }

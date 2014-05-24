@@ -21,18 +21,23 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int demorado2=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int normal=0x7f020002;
-        public static final int normal_copia=0x7f020003;
+        public static final int accidente=0x7f020000;
+        public static final int demora=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int manifestacion=0x7f020003;
+        public static final int normal=0x7f020004;
+        public static final int trabajando=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f080005;
-        public static final int btn_cortado=0x7f080004;
-        public static final int btn_demorado=0x7f080003;
-        public static final int btn_normal=0x7f080002;
-        public static final int tv_descEstPuente=0x7f080001;
-        public static final int tv_hora=0x7f080000;
+        public static final int action_settings=0x7f080008;
+        public static final int btn_cortado=0x7f080007;
+        public static final int btn_demorado=0x7f080006;
+        public static final int btn_normal=0x7f080005;
+        public static final int img_puente=0x7f080003;
+        public static final int scrollView1=0x7f080000;
+        public static final int tv_descEstPuente=0x7f080004;
+        public static final int tv_estado=0x7f080002;
+        public static final int tv_hora=0x7f080001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -49,11 +54,13 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
          */
         public static final int AppBaseTheme=0x7f060000;
@@ -61,8 +68,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
-    }
-    public static final class íd {
-        public static final int tv_estPuente=0x7f090000;
+        public static final int FondoBarraPersonalizada=0x7f060002;
+        public static final int TemaPersonalizado=0x7f060004;
+        public static final int estiloButton=0x7f060003;
     }
 }

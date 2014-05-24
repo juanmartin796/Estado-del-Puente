@@ -1,89 +1,116 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@android:color/background_dark"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/tv_hora"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="23:30 hs"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" >
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="| Puente "
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/tv_hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23:30 hs"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:id="@+íd/tv_estPuente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Normal"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="| Puente "
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/demorado2" />
+                <TextView
+                    android:id="@+id/tv_estado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+            
 
-    <TextView
-        android:id="@+id/tv_descEstPuente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="El transito en el puente se desarrolla en forma normal"
-        android:textColor="@android:color/white" />
+            <ImageView
+                android:id="@+id/img_puente"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/normal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="¿Como esta el Puente?"
-        android:textColor="@android:color/white"
-        android:textSize="20dp" />
+            <TextView
+                android:id="@+id/tv_descEstPuente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normal
+                El transito en el puente se desarrolla en forma normalEl transito en el puente se"
+                android:textColor="@android:color/white" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" 
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:layout_marginTop="10dp">
+                
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="¿Como esta el Puente?"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/btn_normal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Normal" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_demorado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Demorado" />
+                <Button
+                    android:id="@+id/btn_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal" />
 
-        <Button
-            android:id="@+id/btn_cortado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cortado" />
-    </LinearLayout>
+                <Button
+                    android:id="@+id/btn_demorado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Demorado" />
 
+                <Button
+                    android:id="@+id/btn_cortado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cortado" />
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
