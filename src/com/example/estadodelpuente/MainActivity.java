@@ -1,24 +1,7 @@
 package com.example.estadodelpuente;
 
-import java.util.Iterator;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.parse.Parse;
-import com.parse.ParseBroadcastReceiver;
-import com.parse.ParseInstallation;
-import com.parse.PushService;
-
-import android.os.Bundle;
 import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,15 +11,15 @@ public class MainActivity extends Activity {
 	static TextView tv_estado;
 	static TextView tv_hora;
 	static ImageView img_puente;
-	@Override
+		
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Parse.initialize(this, "StygvK9vKwwa3QMIbEDwCJxR0isB3f8P4Kw55Wkn", 
+		/*Parse.initialize(this, "StygvK9vKwwa3QMIbEDwCJxR0isB3f8P4Kw55Wkn", 
 		        "bZpy2jdTpfm29guyn1uj4iDKe0vU0LCWSUgyTP4S");
 		PushService.setDefaultPushCallback(this, MainActivity.class);
-		ParseInstallation.getCurrentInstallation().saveInBackground();
+		ParseInstallation.getCurrentInstallation().saveInBackground();*/
 		tv_desc= (TextView) findViewById(R.id.tv_descEstPuente);
 		tv_estado= (TextView) findViewById(R.id.tv_estado);
 		tv_hora= (TextView) findViewById(R.id.tv_hora);
@@ -60,6 +43,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public static void actualizar(String estado, String descripcion, String hora){
+
 		tv_estado.setText(estado);
 		tv_desc.setText(descripcion);
 		tv_hora.setText(hora);
@@ -75,7 +59,5 @@ public class MainActivity extends Activity {
 			img_puente.setImageResource(R.drawable.accidente);
 		}
 	}
-
-
 
 }
